@@ -1,0 +1,135 @@
+exit
+PS C:\Users\thabangm.BAYPORTFINANCE> docker pull mariadb
+Using default tag: latest
+latest: Pulling from library/mariadb
+83ee3a23efb7: Pull complete
+db98fc6f11f0: Pull complete
+f611acd52c6c: Pull complete
+aa2333e25466: Pull complete
+f53ac4b825fd: Pull complete
+c20afcf9b055: Pull complete
+54c5dc6dcf19: Pull complete
+b1c71d744483: Pull complete
+863a8cc01d1c: Pull complete
+5d1a793b093f: Pull complete
+477cd2b3eba8: Pull complete
+402454543166: Pull complete
+Digest: sha256:8040983db146f729749081c6b216a19d52e0973134e2e34c0b4fd87f48bc15b0
+Status: Downloaded newer image for mariadb:latest
+docker.io/library/mariadb:latest
+PS C:\Users\thabangm.BAYPORTFINANCE> docker stert mariadb
+docker: 'stert' is not a docker command.
+See 'docker --help'
+PS C:\Users\thabangm.BAYPORTFINANCE> docker start mariadb
+Error response from daemon: No such container: mariadb
+Error: failed to start containers: mariadb
+PS C:\Users\thabangm.BAYPORTFINANCE> docker run -e MYSQL_ROOT_PASSWORD=admin --namen wayne -d mariadb
+unknown flag: --namen
+See 'docker run --help'.
+PS C:\Users\thabangm.BAYPORTFINANCE> docker run -e MYSQL_ROOT_PASSWORD=admin --name wayne -d mariadb
+307230a1cdbbfdae87a64c428aff161011739f3523324ab99e2c98020bd51b88
+PS C:\Users\thabangm.BAYPORTFINANCE> docker  exec -it mydbcontainer mysql -u root -p
+Error: No such container: mydbcontainer
+PS C:\Users\thabangm.BAYPORTFINANCE> docker  exec -it wayne mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database wayneindustries
+    -> use wayneindustries
+    -> Ctrl-C -- exit!
+Aborted
+PS C:\Users\thabangm.BAYPORTFINANCE> docker  exec -it wayne mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database wayneindustries;
+Query OK, 1 row affected (0.000 sec)
+
+MariaDB [(none)]> use wayneindustries;
+Database changed
+MariaDB [wayneindustries]> create database fox;
+Query OK, 1 row affected (0.000 sec)
+
+MariaDB [wayneindustries]> use fos;
+ERROR 1049 (42000): Unknown database 'fos'
+MariaDB [wayneindustries]> use fox;
+Database changed
+MariaDB [fox]> create table user<id int<10> not null ,name varchar<25> not null>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<id int<10> not null ,name varchar<25> not null>' at line 1
+MariaDB [fox]> create table user<id varchar<100> not null ,name varchar<25> not null>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<id varchar<100> not null ,name varchar<25> not null>' at line 1
+MariaDB [fox]> create table user<id int<11> null ,name varchar<25> not null>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<id int<11> null ,name varchar<25> not null>' at line 1
+MariaDB [fox]> create table user<id int<11> unsigned null ,name varchar<25> not null>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<id int<11> unsigned null ,name varchar<25> not null>' at line 1
+MariaDB [fox]> create table user<id int<11> unsigned auto_increment primary key not null ,name varchar<25> not null>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<id int<11> unsigned auto_increment primary key not null ,name varchar<25> no...' at line 1
+MariaDB [fox]> create table fox(ID CHAR(3),name CHAR(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [fox]> create table fox(ID CHAR(3),name CHAR(10));
+Query OK, 0 rows affected (0.018 sec)
+
+MariaDB [fox]> select * from fox;
+Empty set (0.001 sec)
+
+MariaDB [fox]> insert INTO employee (id,name)
+    -> use fox;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'use fox' at line 2
+MariaDB [fox]> insert INTO fox (id,name);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [fox]> insert INTO fox (id,name)
+    -> values (50,BATMOBILE)
+    -> cd
+    -> exit
+    ->
+    -> use fox;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cd
+exit
+
+use fox' at line 3
+MariaDB [fox]> show tables;
++---------------+
+| Tables_in_fox |
++---------------+
+| fox           |
++---------------+
+1 row in set (0.001 sec)
+
+MariaDB [fox]> insert INTO (50,BATMOBILE)
+    -> use fox
+    -> use fox;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(50,BATMOBILE)
+use fox
+use fox' at line 1
+MariaDB [fox]> show tables;
++---------------+
+| Tables_in_fox |
++---------------+
+| fox           |
++---------------+
+1 row in set (0.000 sec)
+
+MariaDB [fox]> exit
+Bye
+PS C:\Users\thabangm.BAYPORTFINANCE> get status
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get status
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\thabangm.BAYPORTFINANCE>
