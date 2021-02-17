@@ -133,3 +133,23 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 
 PS C:\Users\thabangm.BAYPORTFINANCE>
+
+PS C:\Users\thabangm.BAYPORTFINANCE> docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+mariadb                  latest    ade39f0469a3   3 weeks ago     407MB
+centos                   latest    300e315adb2f   2 months ago    209MB
+docker/getting-started   latest    3c156928aeec   10 months ago   24.8MB
+hello-world              latest    bf756fb1ae65   13 months ago   13.3kB
+PS C:\Users\thabangm.BAYPORTFINANCE> docker  run -p 3307:27017 mariadb
+2021-02-17 08:58:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 1:10.5.8+maria~focal started.
+2021-02-17 08:58:31+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2021-02-17 08:58:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 1:10.5.8+maria~focal started.
+2021-02-17 08:58:31+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+        You need to specify one of MYSQL_ROOT_PASSWORD, MYSQL_ALLOW_EMPTY_PASSWORD and MYSQL_RANDOM_ROOT_PASSWORD
+PS C:\Users\thabangm.BAYPORTFINANCE> docker  run -p 3307:27017 mariadb
+2021-02-17 08:58:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 1:10.5.8+maria~focal started.
+2021-02-17 08:58:46+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2021-02-17 08:58:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 1:10.5.8+maria~focal started.
+2021-02-17 08:58:46+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+        You need to specify one of MYSQL_ROOT_PASSWORD, MYSQL_ALLOW_EMPTY_PASSWORD and MYSQL_RANDOM_ROOT_PASSWORD
+PS C:\Users\thabangm.BAYPORTFINANCE>
