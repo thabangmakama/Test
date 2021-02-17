@@ -1,0 +1,494 @@
+PS C:\Users\thabangm.BAYPORTFINANCE> docker pull centos
+Using default tag: latest
+latest: Pulling from library/centos
+7a0437f04f83: Pull complete
+Digest: sha256:5528e8b1b1719d34604c87e11dcd1c0a20bedf46e83b5632cdeac91b8c04efc1
+Status: Downloaded newer image for centos:latest
+docker.io/library/centos:latest
+PS C:\Users\thabangm.BAYPORTFINANCE> docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS        PORTS                NAMES
+135f3626d954   docker/getting-started   "nginx -g 'daemon of…"   23 hours ago   Up 23 hours   0.0.0.0:80->80/tcp   flamboyant_satoshi
+PS C:\Users\thabangm.BAYPORTFINANCE> docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS                     PORTS                NAMES
+5c687505e0f1   hello-world              "/hello"                 10 minutes ago   Exited (0) 9 minutes ago                        friendly_mestorf
+135f3626d954   docker/getting-started   "nginx -g 'daemon of…"   23 hours ago     Up 23 hours                0.0.0.0:80->80/tcp   flamboyant_satoshi
+PS C:\Users\thabangm.BAYPORTFINANCE> docker run centos
+PS C:\Users\thabangm.BAYPORTFINANCE> yum install bind* -y
+yum : The term 'yum' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ yum install bind* -y
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (yum:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\thabangm.BAYPORTFINANCE> docker run --name server1 -it centos
+[root@d9663b817178 /]# yum install bind* -y
+Failed to set locale, defaulting to C.UTF-8
+CentOS Linux 8 - AppStream                                                              805 kB/s | 6.3 MB     00:08
+CentOS Linux 8 - BaseOS                                                                 912 kB/s | 2.3 MB     00:02
+CentOS Linux 8 - Extras                                                                 9.4 kB/s | 8.6 kB     00:00
+Package bind-export-libs-32:9.11.20-5.el8.x86_64 is already installed.
+Dependencies resolved.
+========================================================================================================================
+ Package                                Architecture       Version                          Repository             Size
+========================================================================================================================
+Installing:
+ bind                                   x86_64             32:9.11.20-5.el8                 appstream             2.1 M
+ bind-chroot                            x86_64             32:9.11.20-5.el8                 appstream             103 k
+ bind-devel                             x86_64             32:9.11.20-5.el8                 appstream             176 k
+ bind-export-devel                      x86_64             32:9.11.20-5.el8                 baseos                405 k
+ bind-libs                              x86_64             32:9.11.20-5.el8                 appstream             172 k
+ bind-libs-lite                         x86_64             32:9.11.20-5.el8                 appstream             1.2 M
+ bind-license                           noarch             32:9.11.20-5.el8                 appstream             101 k
+ bind-lite-devel                        x86_64             32:9.11.20-5.el8                 appstream             398 k
+ bind-pkcs11                            x86_64             32:9.11.20-5.el8                 appstream             390 k
+ bind-pkcs11-devel                      x86_64             32:9.11.20-5.el8                 appstream             114 k
+ bind-pkcs11-libs                       x86_64             32:9.11.20-5.el8                 appstream             1.1 M
+ bind-pkcs11-utils                      x86_64             32:9.11.20-5.el8                 appstream             259 k
+ bind-sdb                               x86_64             32:9.11.20-5.el8                 appstream             450 k
+ bind-sdb-chroot                        x86_64             32:9.11.20-5.el8                 appstream             103 k
+ bind-utils                             x86_64             32:9.11.20-5.el8                 appstream             444 k
+Upgrading:
+ openssl-libs                           x86_64             1:1.1.1g-12.el8_3                baseos                1.5 M
+Installing dependencies:
+ cmake-filesystem                       x86_64             3.11.4-7.el8                     appstream              40 k
+ keyutils-libs-devel                    x86_64             1.5.10-6.el8                     baseos                 48 k
+ krb5-devel                             x86_64             1.18.2-5.el8                     baseos                558 k
+ libcap-devel                           x86_64             2.26-4.el8                       baseos                 34 k
+ libcom_err-devel                       x86_64             1.45.6-1.el8                     baseos                 38 k
+ libkadm5                               x86_64             1.18.2-5.el8                     baseos                185 k
+ libmaxminddb                           x86_64             1.2.0-10.el8                     appstream              33 k
+ libpkgconf                             x86_64             1.4.2-1.el8                      baseos                 35 k
+ libpq                                  x86_64             12.4-1.el8_2                     appstream             195 k
+ libselinux-devel                       x86_64             2.9-4.el8_3                      baseos                199 k
+ libsepol-devel                         x86_64             2.9-1.el8                        baseos                 86 k
+ libverto-devel                         x86_64             0.3.0-5.el8                      baseos                 18 k
+ libxml2-devel                          x86_64             2.9.7-8.el8                      appstream             1.0 M
+ mariadb-connector-c                    x86_64             3.1.11-2.el8_3                   appstream             200 k
+ mariadb-connector-c-config             noarch             3.1.11-2.el8_3                   appstream              15 k
+ openssl                                x86_64             1:1.1.1g-12.el8_3                baseos                707 k
+ openssl-devel                          x86_64             1:1.1.1g-12.el8_3                baseos                2.3 M
+ pcre2-devel                            x86_64             10.32-2.el8                      baseos                605 k
+ pcre2-utf16                            x86_64             10.32-2.el8                      baseos                229 k
+ pcre2-utf32                            x86_64             10.32-2.el8                      baseos                220 k
+ pkgconf                                x86_64             1.4.2-1.el8                      baseos                 38 k
+ pkgconf-m4                             noarch             1.4.2-1.el8                      baseos                 17 k
+ pkgconf-pkg-config                     x86_64             1.4.2-1.el8                      baseos                 15 k
+ python3-bind                           noarch             32:9.11.20-5.el8                 appstream             149 k
+ python3-ply                            noarch             3.9-8.el8                        baseos                108 k
+ xz-devel                               x86_64             5.2.4-3.el8                      baseos                 62 k
+ zlib-devel                             x86_64             1.2.11-16.el8_2                  baseos                 57 k
+Installing weak dependencies:
+ geolite2-city                          noarch             20180605-1.el8                   appstream              19 M
+ geolite2-country                       noarch             20180605-1.el8                   appstream             1.0 M
+ openssl-pkcs11                         x86_64             0.4.10-2.el8                     baseos                 66 k
+
+Transaction Summary
+========================================================================================================================
+Install  45 Packages
+Upgrade   1 Package
+
+Total download size: 36 M
+Downloading Packages:
+CentOS Linux 8 - BaseOS                 196% [==========================================================================[MIRROR] bind-chroot-9.11.20-5.el8.x86_64.rpm: Status code: 404 for http://jnb.mirror.kvm.net/centos/8.3.2011/AppStream/x86_64/os/Packages/bind-chroot-9.11.20-5.el8.x86_64.rpm (IP: 102.140.95.3)
+[MIRROR] bind-devel-9.11.20-5.el8.x86_64.rpm: Status code: 404 for http://jnb.mirror.kvm.net/centos/8.3.2011/AppStream/x86_64/os/Packages/bind-devel-9.11.20-5.el8.x86_64.rpm (IP: 102.140.95.3)
+(1/46): bind-chroot-9.11.20-5.el8.x86_64.rpm                                            173 kB/s | 103 kB     00:00
+[MIRROR] bind-libs-9.11.20-5.el8.x86_64.rpm: Status code: 404 for http://jnb.mirror.kvm.net/centos/8.3.2011/AppStream/x86_64/os/Packages/bind-libs-9.11.20-5.el8.x86_64.rpm (IP: 102.140.95.3)
+(2/46): bind-devel-9.11.20-5.el8.x86_64.rpm                                             223 kB/s | 176 kB     00:00
+(3/46): bind-libs-9.11.20-5.el8.x86_64.rpm                                              681 kB/s | 172 kB     00:00
+(4/46): bind-license-9.11.20-5.el8.noarch.rpm                                           496 kB/s | 101 kB     00:00
+(5/46): bind-lite-devel-9.11.20-5.el8.x86_64.rpm                                        967 kB/s | 398 kB     00:00
+(6/46): bind-pkcs11-9.11.20-5.el8.x86_64.rpm                                            1.1 MB/s | 390 kB     00:00
+(7/46): bind-pkcs11-devel-9.11.20-5.el8.x86_64.rpm                                      818 kB/s | 114 kB     00:00
+(8/46): bind-libs-lite-9.11.20-5.el8.x86_64.rpm                                         740 kB/s | 1.2 MB     00:01
+(9/46): bind-pkcs11-utils-9.11.20-5.el8.x86_64.rpm                                      269 kB/s | 259 kB     00:00
+(10/46): bind-9.11.20-5.el8.x86_64.rpm                                                  513 kB/s | 2.1 MB     00:04
+(11/46): bind-sdb-chroot-9.11.20-5.el8.x86_64.rpm                                       255 kB/s | 103 kB     00:00
+(12/46): bind-pkcs11-libs-9.11.20-5.el8.x86_64.rpm                                      401 kB/s | 1.1 MB     00:02
+(13/46): bind-utils-9.11.20-5.el8.x86_64.rpm                                            1.4 MB/s | 444 kB     00:00
+(14/46): cmake-filesystem-3.11.4-7.el8.x86_64.rpm                                       225 kB/s |  40 kB     00:00
+(15/46): bind-sdb-9.11.20-5.el8.x86_64.rpm                                               85 kB/s | 450 kB     00:05
+(16/46): libmaxminddb-1.2.0-10.el8.x86_64.rpm                                            92 kB/s |  33 kB     00:00
+(17/46): libpq-12.4-1.el8_2.x86_64.rpm                                                  168 kB/s | 195 kB     00:01
+(18/46): geolite2-country-20180605-1.el8.noarch.rpm                                     167 kB/s | 1.0 MB     00:06
+(19/46): mariadb-connector-c-3.1.11-2.el8_3.x86_64.rpm                                  406 kB/s | 200 kB     00:00
+(20/46): mariadb-connector-c-config-3.1.11-2.el8_3.noarch.rpm                           174 kB/s |  15 kB     00:00
+(21/46): python3-bind-9.11.20-5.el8.noarch.rpm                                          461 kB/s | 149 kB     00:00
+(22/46): bind-export-devel-9.11.20-5.el8.x86_64.rpm                                     462 kB/s | 405 kB     00:00
+(23/46): keyutils-libs-devel-1.5.10-6.el8.x86_64.rpm                                    223 kB/s |  48 kB     00:00
+(24/46): libxml2-devel-2.9.7-8.el8.x86_64.rpm                                           343 kB/s | 1.0 MB     00:03
+(25/46): libcap-devel-2.26-4.el8.x86_64.rpm                                             205 kB/s |  34 kB     00:00
+(26/46): libcom_err-devel-1.45.6-1.el8.x86_64.rpm                                       216 kB/s |  38 kB     00:00
+(27/46): libkadm5-1.18.2-5.el8.x86_64.rpm                                               349 kB/s | 185 kB     00:00
+(28/46): libpkgconf-1.4.2-1.el8.x86_64.rpm                                              294 kB/s |  35 kB     00:00
+(29/46): krb5-devel-1.18.2-5.el8.x86_64.rpm                                             375 kB/s | 558 kB     00:01
+(30/46): libselinux-devel-2.9-4.el8_3.x86_64.rpm                                        416 kB/s | 199 kB     00:00
+(31/46): libverto-devel-0.3.0-5.el8.x86_64.rpm                                          181 kB/s |  18 kB     00:00
+(32/46): libsepol-devel-2.9-1.el8.x86_64.rpm                                            365 kB/s |  86 kB     00:00
+(33/46): openssl-1.1.1g-12.el8_3.x86_64.rpm                                             498 kB/s | 707 kB     00:01
+(34/46): openssl-pkcs11-0.4.10-2.el8.x86_64.rpm                                         251 kB/s |  66 kB     00:00
+(35/46): pcre2-devel-10.32-2.el8.x86_64.rpm                                             412 kB/s | 605 kB     00:01
+(36/46): pcre2-utf16-10.32-2.el8.x86_64.rpm                                             292 kB/s | 229 kB     00:00
+(37/46): pcre2-utf32-10.32-2.el8.x86_64.rpm                                             367 kB/s | 220 kB     00:00
+(38/46): pkgconf-1.4.2-1.el8.x86_64.rpm                                                 207 kB/s |  38 kB     00:00
+(39/46): pkgconf-m4-1.4.2-1.el8.noarch.rpm                                              147 kB/s |  17 kB     00:00
+(40/46): pkgconf-pkg-config-1.4.2-1.el8.x86_64.rpm                                      143 kB/s |  15 kB     00:00
+(41/46): python3-ply-3.9-8.el8.noarch.rpm                                               325 kB/s | 108 kB     00:00
+(42/46): xz-devel-5.2.4-3.el8.x86_64.rpm                                                298 kB/s |  62 kB     00:00
+(43/46): zlib-devel-1.2.11-16.el8_2.x86_64.rpm                                          296 kB/s |  57 kB     00:00
+(44/46): openssl-devel-1.1.1g-12.el8_3.x86_64.rpm                                       419 kB/s | 2.3 MB     00:05
+(45/46): openssl-libs-1.1.1g-12.el8_3.x86_64.rpm                                        551 kB/s | 1.5 MB     00:02
+(46/46): geolite2-city-20180605-1.el8.noarch.rpm                                        843 kB/s |  19 MB     00:23
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   1.3 MB/s |  36 MB     00:28
+warning: /var/cache/dnf/appstream-02e86d1c976ab532/packages/bind-9.11.20-5.el8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY
+CentOS Linux 8 - AppStream                                                              1.6 MB/s | 1.6 kB     00:00
+Importing GPG key 0x8483C65D:
+ Userid     : "CentOS (CentOS Official Signing Key) <security@centos.org>"
+ Fingerprint: 99DB 70FA E1D7 CE22 7FB6 4882 05B5 55B3 8483 C65D
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : bind-license-32:9.11.20-5.el8.noarch                                                          1/47
+  Upgrading        : openssl-libs-1:1.1.1g-12.el8_3.x86_64                                                         2/47
+  Running scriptlet: openssl-libs-1:1.1.1g-12.el8_3.x86_64                                                         2/47
+  Installing       : openssl-1:1.1.1g-12.el8_3.x86_64                                                              3/47
+  Installing       : openssl-pkcs11-0.4.10-2.el8.x86_64                                                            4/47
+  Installing       : libpq-12.4-1.el8_2.x86_64                                                                     5/47
+  Installing       : libkadm5-1.18.2-5.el8.x86_64                                                                  6/47
+  Installing       : python3-ply-3.9-8.el8.noarch                                                                  7/47
+  Installing       : python3-bind-32:9.11.20-5.el8.noarch                                                          8/47
+  Installing       : pkgconf-m4-1.4.2-1.el8.noarch                                                                 9/47
+  Installing       : pcre2-utf32-10.32-2.el8.x86_64                                                               10/47
+  Installing       : pcre2-utf16-10.32-2.el8.x86_64                                                               11/47
+  Installing       : libpkgconf-1.4.2-1.el8.x86_64                                                                12/47
+  Installing       : pkgconf-1.4.2-1.el8.x86_64                                                                   13/47
+  Installing       : pkgconf-pkg-config-1.4.2-1.el8.x86_64                                                        14/47
+  Installing       : zlib-devel-1.2.11-16.el8_2.x86_64                                                            15/47
+  Installing       : libcap-devel-2.26-4.el8.x86_64                                                               16/47
+  Installing       : libcom_err-devel-1.45.6-1.el8.x86_64                                                         17/47
+  Installing       : libsepol-devel-2.9-1.el8.x86_64                                                              18/47
+  Installing       : libverto-devel-0.3.0-5.el8.x86_64                                                            19/47
+  Installing       : pcre2-devel-10.32-2.el8.x86_64                                                               20/47
+  Installing       : libselinux-devel-2.9-4.el8_3.x86_64                                                          21/47
+  Installing       : xz-devel-5.2.4-3.el8.x86_64                                                                  22/47
+  Installing       : keyutils-libs-devel-1.5.10-6.el8.x86_64                                                      23/47
+  Installing       : krb5-devel-1.18.2-5.el8.x86_64                                                               24/47
+  Installing       : openssl-devel-1:1.1.1g-12.el8_3.x86_64                                                       25/47
+  Installing       : mariadb-connector-c-config-3.1.11-2.el8_3.noarch                                             26/47
+  Installing       : mariadb-connector-c-3.1.11-2.el8_3.x86_64                                                    27/47
+  Installing       : geolite2-country-20180605-1.el8.noarch                                                       28/47
+  Installing       : geolite2-city-20180605-1.el8.noarch                                                          29/47
+  Installing       : libmaxminddb-1.2.0-10.el8.x86_64                                                             30/47
+  Running scriptlet: libmaxminddb-1.2.0-10.el8.x86_64                                                             30/47
+  Installing       : bind-libs-lite-32:9.11.20-5.el8.x86_64                                                       31/47
+  Installing       : bind-libs-32:9.11.20-5.el8.x86_64                                                            32/47
+  Running scriptlet: bind-32:9.11.20-5.el8.x86_64                                                                 33/47
+  Installing       : bind-32:9.11.20-5.el8.x86_64                                                                 33/47
+  Running scriptlet: bind-32:9.11.20-5.el8.x86_64                                                                 33/47
+  Installing       : bind-pkcs11-libs-32:9.11.20-5.el8.x86_64                                                     34/47
+  Installing       : bind-sdb-32:9.11.20-5.el8.x86_64                                                             35/47
+  Running scriptlet: bind-sdb-32:9.11.20-5.el8.x86_64                                                             35/47
+  Installing       : cmake-filesystem-3.11.4-7.el8.x86_64                                                         36/47
+  Installing       : libxml2-devel-2.9.7-8.el8.x86_64                                                             37/47
+  Installing       : bind-lite-devel-32:9.11.20-5.el8.x86_64                                                      38/47
+  Installing       : bind-devel-32:9.11.20-5.el8.x86_64                                                           39/47
+  Installing       : bind-pkcs11-devel-32:9.11.20-5.el8.x86_64                                                    40/47
+  Installing       : bind-sdb-chroot-32:9.11.20-5.el8.x86_64                                                      41/47
+  Running scriptlet: bind-sdb-chroot-32:9.11.20-5.el8.x86_64                                                      41/47
+  Installing       : bind-pkcs11-32:9.11.20-5.el8.x86_64                                                          42/47
+  Running scriptlet: bind-pkcs11-32:9.11.20-5.el8.x86_64                                                          42/47
+  Installing       : bind-pkcs11-utils-32:9.11.20-5.el8.x86_64                                                    43/47
+  Installing       : bind-chroot-32:9.11.20-5.el8.x86_64                                                          44/47
+  Running scriptlet: bind-chroot-32:9.11.20-5.el8.x86_64                                                          44/47
+  Installing       : bind-utils-32:9.11.20-5.el8.x86_64                                                           45/47
+  Installing       : bind-export-devel-32:9.11.20-5.el8.x86_64                                                    46/47
+  Cleanup          : openssl-libs-1:1.1.1g-11.el8.x86_64                                                          47/47
+  Running scriptlet: openssl-libs-1:1.1.1g-11.el8.x86_64                                                          47/47
+  Running scriptlet: bind-sdb-chroot-32:9.11.20-5.el8.x86_64                                                      47/47
+  Running scriptlet: bind-chroot-32:9.11.20-5.el8.x86_64                                                          47/47
+  Running scriptlet: openssl-libs-1:1.1.1g-11.el8.x86_64                                                          47/47
+  Verifying        : bind-32:9.11.20-5.el8.x86_64                                                                  1/47
+  Verifying        : bind-chroot-32:9.11.20-5.el8.x86_64                                                           2/47
+  Verifying        : bind-devel-32:9.11.20-5.el8.x86_64                                                            3/47
+  Verifying        : bind-libs-32:9.11.20-5.el8.x86_64                                                             4/47
+  Verifying        : bind-libs-lite-32:9.11.20-5.el8.x86_64                                                        5/47
+  Verifying        : bind-license-32:9.11.20-5.el8.noarch                                                          6/47
+  Verifying        : bind-lite-devel-32:9.11.20-5.el8.x86_64                                                       7/47
+  Verifying        : bind-pkcs11-32:9.11.20-5.el8.x86_64                                                           8/47
+  Verifying        : bind-pkcs11-devel-32:9.11.20-5.el8.x86_64                                                     9/47
+  Verifying        : bind-pkcs11-libs-32:9.11.20-5.el8.x86_64                                                     10/47
+  Verifying        : bind-pkcs11-utils-32:9.11.20-5.el8.x86_64                                                    11/47
+  Verifying        : bind-sdb-32:9.11.20-5.el8.x86_64                                                             12/47
+  Verifying        : bind-sdb-chroot-32:9.11.20-5.el8.x86_64                                                      13/47
+  Verifying        : bind-utils-32:9.11.20-5.el8.x86_64                                                           14/47
+  Verifying        : cmake-filesystem-3.11.4-7.el8.x86_64                                                         15/47
+  Verifying        : geolite2-city-20180605-1.el8.noarch                                                          16/47
+  Verifying        : geolite2-country-20180605-1.el8.noarch                                                       17/47
+  Verifying        : libmaxminddb-1.2.0-10.el8.x86_64                                                             18/47
+  Verifying        : libpq-12.4-1.el8_2.x86_64                                                                    19/47
+  Verifying        : libxml2-devel-2.9.7-8.el8.x86_64                                                             20/47
+  Verifying        : mariadb-connector-c-3.1.11-2.el8_3.x86_64                                                    21/47
+  Verifying        : mariadb-connector-c-config-3.1.11-2.el8_3.noarch                                             22/47
+  Verifying        : python3-bind-32:9.11.20-5.el8.noarch                                                         23/47
+  Verifying        : bind-export-devel-32:9.11.20-5.el8.x86_64                                                    24/47
+  Verifying        : keyutils-libs-devel-1.5.10-6.el8.x86_64                                                      25/47
+  Verifying        : krb5-devel-1.18.2-5.el8.x86_64                                                               26/47
+  Verifying        : libcap-devel-2.26-4.el8.x86_64                                                               27/47
+  Verifying        : libcom_err-devel-1.45.6-1.el8.x86_64                                                         28/47
+  Verifying        : libkadm5-1.18.2-5.el8.x86_64                                                                 29/47
+  Verifying        : libpkgconf-1.4.2-1.el8.x86_64                                                                30/47
+  Verifying        : libselinux-devel-2.9-4.el8_3.x86_64                                                          31/47
+  Verifying        : libsepol-devel-2.9-1.el8.x86_64                                                              32/47
+  Verifying        : libverto-devel-0.3.0-5.el8.x86_64                                                            33/47
+  Verifying        : openssl-1:1.1.1g-12.el8_3.x86_64                                                             34/47
+  Verifying        : openssl-devel-1:1.1.1g-12.el8_3.x86_64                                                       35/47
+  Verifying        : openssl-pkcs11-0.4.10-2.el8.x86_64                                                           36/47
+  Verifying        : pcre2-devel-10.32-2.el8.x86_64                                                               37/47
+  Verifying        : pcre2-utf16-10.32-2.el8.x86_64                                                               38/47
+  Verifying        : pcre2-utf32-10.32-2.el8.x86_64                                                               39/47
+  Verifying        : pkgconf-1.4.2-1.el8.x86_64                                                                   40/47
+  Verifying        : pkgconf-m4-1.4.2-1.el8.noarch                                                                41/47
+  Verifying        : pkgconf-pkg-config-1.4.2-1.el8.x86_64                                                        42/47
+  Verifying        : python3-ply-3.9-8.el8.noarch                                                                 43/47
+  Verifying        : xz-devel-5.2.4-3.el8.x86_64                                                                  44/47
+  Verifying        : zlib-devel-1.2.11-16.el8_2.x86_64                                                            45/47
+  Verifying        : openssl-libs-1:1.1.1g-12.el8_3.x86_64                                                        46/47
+  Verifying        : openssl-libs-1:1.1.1g-11.el8.x86_64                                                          47/47
+
+Upgraded:
+  openssl-libs-1:1.1.1g-12.el8_3.x86_64
+
+Installed:
+  bind-32:9.11.20-5.el8.x86_64                            bind-chroot-32:9.11.20-5.el8.x86_64
+  bind-devel-32:9.11.20-5.el8.x86_64                      bind-export-devel-32:9.11.20-5.el8.x86_64
+  bind-libs-32:9.11.20-5.el8.x86_64                       bind-libs-lite-32:9.11.20-5.el8.x86_64
+  bind-license-32:9.11.20-5.el8.noarch                    bind-lite-devel-32:9.11.20-5.el8.x86_64
+  bind-pkcs11-32:9.11.20-5.el8.x86_64                     bind-pkcs11-devel-32:9.11.20-5.el8.x86_64
+  bind-pkcs11-libs-32:9.11.20-5.el8.x86_64                bind-pkcs11-utils-32:9.11.20-5.el8.x86_64
+  bind-sdb-32:9.11.20-5.el8.x86_64                        bind-sdb-chroot-32:9.11.20-5.el8.x86_64
+  bind-utils-32:9.11.20-5.el8.x86_64                      cmake-filesystem-3.11.4-7.el8.x86_64
+  geolite2-city-20180605-1.el8.noarch                     geolite2-country-20180605-1.el8.noarch
+  keyutils-libs-devel-1.5.10-6.el8.x86_64                 krb5-devel-1.18.2-5.el8.x86_64
+  libcap-devel-2.26-4.el8.x86_64                          libcom_err-devel-1.45.6-1.el8.x86_64
+  libkadm5-1.18.2-5.el8.x86_64                            libmaxminddb-1.2.0-10.el8.x86_64
+  libpkgconf-1.4.2-1.el8.x86_64                           libpq-12.4-1.el8_2.x86_64
+  libselinux-devel-2.9-4.el8_3.x86_64                     libsepol-devel-2.9-1.el8.x86_64
+  libverto-devel-0.3.0-5.el8.x86_64                       libxml2-devel-2.9.7-8.el8.x86_64
+  mariadb-connector-c-3.1.11-2.el8_3.x86_64               mariadb-connector-c-config-3.1.11-2.el8_3.noarch
+  openssl-1:1.1.1g-12.el8_3.x86_64                        openssl-devel-1:1.1.1g-12.el8_3.x86_64
+  openssl-pkcs11-0.4.10-2.el8.x86_64                      pcre2-devel-10.32-2.el8.x86_64
+  pcre2-utf16-10.32-2.el8.x86_64                          pcre2-utf32-10.32-2.el8.x86_64
+  pkgconf-1.4.2-1.el8.x86_64                              pkgconf-m4-1.4.2-1.el8.noarch
+  pkgconf-pkg-config-1.4.2-1.el8.x86_64                   python3-bind-32:9.11.20-5.el8.noarch
+  python3-ply-3.9-8.el8.noarch                            xz-devel-5.2.4-3.el8.x86_64
+  zlib-devel-1.2.11-16.el8_2.x86_64
+
+Complete!
+[root@d9663b817178 /]# vim /etc/named.conf
+bash: vim: command not found
+[root@d9663b817178 /]# yum istall vim
+Failed to set locale, defaulting to C.UTF-8
+No such command: istall. Please use /usr/bin/yum --help
+It could be a YUM plugin command, try: "yum install 'dnf-command(istall)'"
+[root@d9663b817178 /]# yum install vim
+Failed to set locale, defaulting to C.UTF-8
+Last metadata expiration check: 0:05:58 ago on Mon Feb 15 20:21:13 2021.
+Dependencies resolved.
+========================================================================================================================
+ Package                       Architecture          Version                             Repository                Size
+========================================================================================================================
+Installing:
+ vim-enhanced                  x86_64                2:8.0.1763-15.el8                   appstream                1.4 M
+Installing dependencies:
+ gpm-libs                      x86_64                1.20.7-15.el8                       appstream                 39 k
+ vim-common                    x86_64                2:8.0.1763-15.el8                   appstream                6.3 M
+ vim-filesystem                noarch                2:8.0.1763-15.el8                   appstream                 48 k
+ which                         x86_64                2.21-12.el8                         baseos                    49 k
+
+Transaction Summary
+========================================================================================================================
+Install  5 Packages
+
+Total download size: 7.8 M
+Installed size: 30 M
+Is this ok [y/N]: y
+Downloading Packages:
+[MIRROR] vim-enhanced-8.0.1763-15.el8.x86_64.rpm: Status code: 404 for http://jnb.mirror.kvm.net/centos/8.3.2011/AppStream/x86_64/os/Packages/vim-enhanced-8.0.1763-15.el8.x86_64.rpm (IP: 102.140.95.3)
+(1/5): gpm-libs-1.20.7-15.el8.x86_64.rpm                                                 53 kB/s |  39 kB     00:00
+[MIRROR] vim-filesystem-8.0.1763-15.el8.noarch.rpm: Status code: 404 for http://jnb.mirror.kvm.net/centos/8.3.2011/AppStream/x86_64/os/Packages/vim-filesystem-8.0.1763-15.el8.noarch.rpm (IP: 102.140.95.3)
+(2/5): vim-filesystem-8.0.1763-15.el8.noarch.rpm                                        212 kB/s |  48 kB     00:00
+(3/5): which-2.21-12.el8.x86_64.rpm                                                     675 kB/s |  49 kB     00:00
+(4/5): vim-enhanced-8.0.1763-15.el8.x86_64.rpm                                          856 kB/s | 1.4 MB     00:01
+(5/5): vim-common-8.0.1763-15.el8.x86_64.rpm                                            502 kB/s | 6.3 MB     00:12
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   540 kB/s | 7.8 MB     00:14
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : which-2.21-12.el8.x86_64                                                                       1/5
+  Installing       : vim-filesystem-2:8.0.1763-15.el8.noarch                                                        2/5
+  Installing       : vim-common-2:8.0.1763-15.el8.x86_64                                                            3/5
+  Installing       : gpm-libs-1.20.7-15.el8.x86_64                                                                  4/5
+  Running scriptlet: gpm-libs-1.20.7-15.el8.x86_64                                                                  4/5
+  Installing       : vim-enhanced-2:8.0.1763-15.el8.x86_64                                                          5/5
+  Running scriptlet: vim-enhanced-2:8.0.1763-15.el8.x86_64                                                          5/5
+  Running scriptlet: vim-common-2:8.0.1763-15.el8.x86_64                                                            5/5
+  Verifying        : gpm-libs-1.20.7-15.el8.x86_64                                                                  1/5
+  Verifying        : vim-common-2:8.0.1763-15.el8.x86_64                                                            2/5
+  Verifying        : vim-enhanced-2:8.0.1763-15.el8.x86_64                                                          3/5
+  Verifying        : vim-filesystem-2:8.0.1763-15.el8.noarch                                                        4/5
+  Verifying        : which-2.21-12.el8.x86_64                                                                       5/5
+
+Installed:
+  gpm-libs-1.20.7-15.el8.x86_64            vim-common-2:8.0.1763-15.el8.x86_64  vim-enhanced-2:8.0.1763-15.el8.x86_64
+  vim-filesystem-2:8.0.1763-15.el8.noarch  which-2.21-12.el8.x86_64
+
+Complete!
+[root@d9663b817178 /]# vim /etc/named.conf
+[root@d9663b817178 /]# vim /etc/named.conf
+[root@d9663b817178 /]# vim /var/named/fwd.thabang.com
+[root@d9663b817178 /]# vim /var/named/fwd.thabang.com
+[root@d9663b817178 /]# vim /var/named/rev.thabang.com
+[root@d9663b817178 /]# vim /var/named/rev.thabang.com
+[root@d9663b817178 /]# service mamed start
+bash: service: command not found
+[root@d9663b817178 /]# service named start
+bash: service: command not found
+[root@d9663b817178 /]# service named stop
+bash: service: command not found
+[root@d9663b817178 /]# chkconfig named on
+Note: Forwarding request to 'systemctl enable named.service'.
+Created symlink /etc/systemd/system/multi-user.target.wants/named.service → /usr/lib/systemd/system/named.service.
+[root@d9663b817178 /]# vim /etc/sysconfig/iptables
+[root@d9663b817178 /]# named-checkzone thabang.com /var/named/fwd.thabang.com
+dns_master_load: /var/named/fwd.thabang.com:1: unknown $ directive '$$TTL'
+dns_master_load: /var/named/fwd.thabang.com:1: unexpected end of line
+dns_master_load: /var/named/fwd.thabang.com:1: unexpected end of input
+/var/named/fwd.thabang.com:10: using RFC1035 TTL semantics
+zone thabang.com/IN: loading from master file /var/named/fwd.thabang.com failed: syntax error
+zone thabang.com/IN: not loaded due to errors.
+[root@d9663b817178 /]# dig server1.thabang.com
+
+; <<>> DiG 9.11.20-RedHat-9.11.20-5.el8 <<>> server1.thabang.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7595
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;server1.thabang.com.           IN      A
+
+;; ANSWER SECTION:
+server1.thabang.com.    300     IN      A       192.64.147.236
+
+;; Query time: 486 msec
+;; SERVER: 192.168.65.1#53(192.168.65.1)
+;; WHEN: Mon Feb 15 21:23:36 UTC 2021
+;; MSG SIZE  rcvd: 53
+
+[root@d9663b817178 /]# dig -x 10.0.0.5
+
+; <<>> DiG 9.11.20-RedHat-9.11.20-5.el8 <<>> -x 10.0.0.5
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36135
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;5.0.0.10.in-addr.arpa.         IN      PTR
+
+;; Query time: 4 msec
+;; SERVER: 192.168.65.1#53(192.168.65.1)
+;; WHEN: Mon Feb 15 21:24:22 UTC 2021
+;; MSG SIZE  rcvd: 39
+
+[root@d9663b817178 /]# dig -x 10.0.0.4
+
+; <<>> DiG 9.11.20-RedHat-9.11.20-5.el8 <<>> -x 10.0.0.4
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 16401
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;4.0.0.10.in-addr.arpa.         IN      PTR
+
+;; Query time: 1115 msec
+;; SERVER: 192.168.65.1#53(192.168.65.1)
+;; WHEN: Mon Feb 15 21:24:30 UTC 2021
+;; MSG SIZE  rcvd: 39
+
+[root@d9663b817178 /]# nslookup server
+Server:         192.168.65.1
+Address:        192.168.65.1#53
+
+** server can't find server: NXDOMAIN
+
+[root@d9663b817178 /]# nslookup server1
+Server:         192.168.65.1
+Address:        192.168.65.1#53
+
+** server can't find server1: NXDOMAIN
+
+[root@d9663b817178 /]# vim /etc/resolve.conf
+[root@d9663b817178 /]# vim /etc/resolv.conf
+[root@d9663b817178 /]# nslookup server1
+;; connection timed out; no servers could be reached
+
+[root@d9663b817178 /]# nslookup server
+;; connection timed out; no servers could be reached
+
+[root@d9663b817178 /]# vim /etc/resolv.conf
+[root@d9663b817178 /]# vim /etc/resolv.conf
+[root@d9663b817178 /]# vim /etc/resolv.conf
+[root@d9663b817178 /]# nslookup server
+;; connection timed out; no servers could be reached
+
+[root@d9663b817178 /]# vim /etc/resolv.conf
+[root@d9663b817178 /]# nslookup server
+;; connection timed out; no servers could be reached
+
+[root@d9663b817178 /]# cd /etc/selinux/
+[root@d9663b817178 selinux]# cd
+[root@d9663b817178 ~]# getenforce
+bash: getenforce: command not found
+[root@d9663b817178 ~]# yum install selinux
+Failed to set locale, defaulting to C.UTF-8
+Last metadata expiration check: 1:26:13 ago on Mon Feb 15 20:21:13 2021.
+No match for argument: selinux
+Error: Unable to find a match: selinux
+[root@d9663b817178 ~]# docker volume create mydocker
+bash: docker: command not found
+[root@d9663b817178 ~]# docker volume create  dockervoll
+bash: docker: command not found
+[root@d9663b817178 ~]# docker volume create  Docker
+bash: docker: command not found
+[root@d9663b817178 ~]# docker volume ls
+bash: docker: command not found
+[root@d9663b817178 ~]# vim listit.sh
+[root@d9663b817178 ~]# chmod +x listit.sh
+[root@d9663b817178 ~]# ./listit.sh
+line ones line
+[root@d9663b817178 ~]# vim listit.sh
+[root@d9663b817178 ~]# ./listit.sh
+line ones line
+Enter number:
+2
+line ones line : num
+[root@d9663b817178 ~]# vim listit.sh
+[root@d9663b817178 ~]# ./listit.sh
+line ones line
+Enter number:
+2
+line ones line : 2
+[root@d9663b817178 ~]# exit
